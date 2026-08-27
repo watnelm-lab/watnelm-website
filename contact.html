@@ -37,10 +37,88 @@
 </header>
 
 <main>
-<section class="container page-hero reveal"><div class="eyebrow">Contact Watnelm</div><h1>Let's talk about<br><span class="blue">your project.</span></h1><p>Send the basics and we'll take it from there. This form opens your email application with the project details already filled in and addressed to Watnelm.</p></section>
+<section class="container page-hero reveal"><div class="eyebrow">Contact Watnelm</div><h1>Let's talk about<br><span class="blue">your project.</span></h1><p>Send the basics and we'll take it from there. Your request is submitted securely through the site and delivered directly to Watnelm.</p></section>
 <section class="section" style="padding-top:20px"><div class="container contact-grid">
 <aside class="contact-panel reveal"><div class="eyebrow">Direct contact</div><h3 style="margin-top:24px">Service & project inquiries</h3><a class="email" href="mailto:service@watnelm.com">service@watnelm.com</a><p class="muted" style="margin-top:24px">Use this address for installations, troubleshooting, project questions, and quote inquiries.</p><div class="callout">Licensed for security installation in North Carolina.</div></aside>
-<section class="contact-panel reveal"><form id="contact-form" class="form"><div><label for="name">Name</label><input id="name" name="name" autocomplete="name" required></div><div><label for="email">Email</label><input id="email" type="email" name="email" autocomplete="email" required></div><div><label for="phone">Phone</label><input id="phone" name="phone" autocomplete="tel"></div><div><label for="project">Project type</label><select id="project" name="project"><option value="">Choose one</option><option>Structured cabling / Cat5e / Cat6</option><option>Fiber installation / splicing / termination</option><option>RG6 / RG11 coax</option><option>Networking / server work</option><option>Security / cameras</option><option>Troubleshooting / repair</option><option>Other</option></select></div><div><label for="message">Tell us about the project</label><textarea id="message" name="message" required></textarea></div><button class="btn btn-primary" type="submit">Email Watnelm ↗</button><p class="small">Submitting opens your default email application and addresses the message to service@watnelm.com. This website does not store the form data.</p></form></section>
+<section class="contact-panel reveal">
+  <form id="quote-form" class="form" novalidate>
+    <div class="form-row">
+      <div>
+        <label for="name">Name <span aria-hidden="true">*</span></label>
+        <input id="name" name="name" autocomplete="name" required maxlength="100">
+      </div>
+      <div>
+        <label for="email">Email <span aria-hidden="true">*</span></label>
+        <input id="email" type="email" name="email" autocomplete="email" required maxlength="160">
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div>
+        <label for="phone">Phone</label>
+        <input id="phone" type="tel" name="phone" autocomplete="tel" maxlength="40">
+      </div>
+      <div>
+        <label for="propertyType">Project location</label>
+        <select id="propertyType" name="propertyType">
+          <option value="">Choose one</option>
+          <option>Residential</option>
+          <option>Commercial</option>
+          <option>Other</option>
+        </select>
+      </div>
+    </div>
+
+    <div>
+      <label for="project">Service needed <span aria-hidden="true">*</span></label>
+      <select id="project" name="project" required>
+        <option value="">Choose a service</option>
+        <option>Structured cabling / Cat5e / Cat6</option>
+        <option>Fiber installation / splicing / termination</option>
+        <option>RG6 / RG11 coax</option>
+        <option>Networking / server work</option>
+        <option>Security / cameras</option>
+        <option>Troubleshooting / repair</option>
+        <option>Other</option>
+      </select>
+    </div>
+
+    <div class="form-row">
+      <div>
+        <label for="location">City / ZIP</label>
+        <input id="location" name="location" autocomplete="postal-code" maxlength="100" placeholder="Where is the project?">
+      </div>
+      <div>
+        <label for="timeline">Timeline</label>
+        <select id="timeline" name="timeline">
+          <option value="">Choose one</option>
+          <option>As soon as possible</option>
+          <option>Within 1–2 weeks</option>
+          <option>Within 30 days</option>
+          <option>Planning / future project</option>
+        </select>
+      </div>
+    </div>
+
+    <div>
+      <label for="message">Tell us about the project <span aria-hidden="true">*</span></label>
+      <textarea id="message" name="message" required minlength="10" maxlength="4000" placeholder="Tell us what you need, what is already installed, and anything else that would help us understand the job."></textarea>
+    </div>
+
+    <div class="honeypot" aria-hidden="true">
+      <label for="companyWebsite">Company website</label>
+      <input id="companyWebsite" name="companyWebsite" tabindex="-1" autocomplete="off">
+    </div>
+
+    <button class="btn btn-primary quote-submit" type="submit">
+      <span class="submit-label">Submit Quote Request</span>
+      <span class="submit-arrow">↗</span>
+    </button>
+
+    <div id="form-status" class="form-status" role="status" aria-live="polite"></div>
+    <p class="small">Your request is sent directly to Watnelm at service@watnelm.com. We do not sell your information.</p>
+  </form>
+</section>
 </div></section>
 </main>
 

@@ -33,3 +33,27 @@ Vercel will redeploy automatically if the repository is connected to the product
 
 Google Workspace:
 Do not change or delete Google Workspace MX records. Website DNS and Workspace email records can coexist.
+
+
+QUOTE FORM — V4
+---------------
+This build replaces the mailto contact form with a real Vercel serverless form.
+
+Required setup:
+1. Create a free Resend account.
+2. Add/verify watnelm.com in Resend.
+3. Add the DNS records Resend gives you in Squarespace DNS.
+   IMPORTANT: do not remove Google Workspace MX records.
+4. Create a Resend API key.
+5. In Vercel > Watnelm project > Settings > Environment Variables:
+   Name: RESEND_API_KEY
+   Value: your Resend API key
+   Environment: Production (and Preview if desired)
+6. Redeploy after adding the variable.
+
+Form delivery:
+- From: quotes@watnelm.com
+- To: service@watnelm.com
+- Reply-To: customer's email address
+
+The website does not expose the Resend API key to visitors.
